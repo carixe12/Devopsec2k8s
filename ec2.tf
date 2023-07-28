@@ -1,9 +1,8 @@
-resource "aws" "myec2" {
-  ami                    = "ami-053b0d53c279acc90"
+resource "aws_instance" "myec2" {
+  ami                    = "ami-0f34c5ae932e6f0e4"
   instance_type          = "t2.medium"
-  availibility_zonw      = "us-west-2"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
-  key_name = "mykey"
+  key_name               = "mykey"
 
 
   provisioner "remote-exec" {
